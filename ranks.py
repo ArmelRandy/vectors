@@ -1,4 +1,4 @@
-from transformers import AutoModel, AutoModelForCausalLM
+from transformers import AutoModel
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
