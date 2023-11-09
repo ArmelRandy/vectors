@@ -14,7 +14,7 @@ The vast majority of language models rely on the transformer architecture. It is
   - $W_q \in \mathbb{R}^{d_{model}\times d_{model}}$ : It is the matrix of keys. In reality, we can represent it as a matrix in $\mathbb{R}^{h\times d_{model} \times \frac{d_{model}}{h}}$ in order to make it clear that we use multihead attention where $h$ is the number of heads. ($d_k = \frac{d_{model}}{h})$
   - $W_k$ : It is the matrix of keys.
   - $W_v$ : It is the matrix of values
-  - $W_o$ : It is the output matrix in multi-head attention. For each head we have $softmax \left ( \frac{XW_q (XW_k)^T}{\sqrt{d_k}} \right )W_v \in \mathbb{R}^{n\times d_k}$. We concatenate each of this output (rows-wise, to obtain a matrix in $\mathbb{R}^{n \times d_{model}}$) and we multiply the result by $W_o$.
+  - $W_o$ : It is the output matrix in multi-head attention. For each head we have $softmax \left ( \frac{XW_q (XW_k)^T}{\sqrt{d_k}} \right )XW_v \in \mathbb{R}^{n\times d_k}$. We concatenate each of this output (rows-wise, to obtain a matrix in $\mathbb{R}^{n \times d_{model}}$) and we multiply the result by $W_o$.
 - A **feedforward network** : It is characterized by 2 matrices :
   - $W_1 \in \mathbb{R}^{d_{model} \times d_{ff}}$ where either $d_{ff} = 4d_{model}$ or $d_{ff} = \frac{8}{3}d_{model}$ in practice.
   - $W_2 \in \mathbb{R}^{d_{ff} \times d_{model}}$
