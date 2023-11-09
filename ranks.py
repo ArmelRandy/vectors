@@ -6,7 +6,6 @@ import argparse
 import torch
 import json
 
-
 def get_bert_layer_parameters(layer):
     attention = layer.attention
     query = attention.self.query
