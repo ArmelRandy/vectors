@@ -44,6 +44,9 @@ It is also possible to compute any metric of interest. For each dataset, we know
 Research questions :
 - How does the rank of the parameters of a models as a function of their depth in the network?
 
-For a parameter matrix $W$, we can use singular value decomposition in order to compute its singular values $[\sigma_1 \ldots \sigma_N]$. Given a *threshold*, we can find the value $r$ such that $\frac{\sum_{i=1}^{r}\sigma_i^2}{\sum_{i=1}^{N}\sigma_i^2} \geq threshold$. We can analysize how that value evolve for each parameter family (`query`, `key`, `value`, `output`, `feedforward1`, `feedforward2`) as we go for layer $1$ to layer $L$.
+For a parameter matrix $W$, we can use singular value decomposition in order to compute its singular values $[\sigma_1 \ldots \sigma_N]$. Given a *threshold*, we can find the value $r$ such that $\frac{\sum_{i=1}^{r}\sigma_i^2}{\sum_{i=1}^{N}\sigma_i^2} \geq threshold$. We can analysize how that value evolve for each parameter family (`query`, `key`, `value`, `output`, `feedforward1`, `feedforward2`) as we go from layer $1$ to layer $L$. We can even derive an equation if we are able to find a pattern. Here is what we obtain with gpt2-medium
+
+![](./gpt/gpt.png)
 
 ## Acknowledgements
+This work would not have been possible without Hugging Face.
